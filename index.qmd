@@ -1,0 +1,57 @@
+---
+title: "Vetiver Research"
+date: August 2022
+format: 
+    html: 
+        toc: true
+---
+
+# Motivation
+
+Main questions to answer: _is there anything in our vocabulary we should change?_ and _where are our shortcomings? are these things that are out of scope, or that need more investment?_
+
+# Literature review
+
+# Discussion
+
+## Current standing
+
+- Confident in version, deploy, monitor
+- Importance of modularity
+
+## Scope
+
+- DAGs
+- model registries
+
+## Intended future investments
+
+- monitoring, how much is infrastructure dependent?
+- The language of MLOps is still developing. Many terms such as "batch processing" have multiple conflicting meanings. We proposed to create a glossary of how we use terms in vetiver's documentation. (or put this in current standing?)
+- incorporation of vetiver components with other MLOps projects
+- clarification of where vetiver succeed in "winning points" as per "The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction" 
+
+
+# Final remarks
+
+After reading, we feel confident in vetiver's scope of versioning, deploying, and monitoring models. We feel vetiver's strengths lie in its ability to quickly prototype REST APIs, and then scale these prototypes safely.
+
+# Our reading list
+
+Books:
+
+- _Designing Machine Learning Systems_ by Chip Huyen
+
+Articles:
+
+- “Machine Learning Operations (MLOps): Overview, Definition, and Architecture” by Kreuzberger et al
+- “From Concept Drift to Model Degradation: An Overview on Performance-Aware Drift Detectors” by Bayram et al
+- “Towards Observability for Production Machine Learning Pipelines” by Shankar et al
+- ["The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction"](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/aad9f93b86b7addfea4c419b9100c6cdd26cacea.pdf) by Breck et al
+
+Web content:
+
+- _How ML Breaks: A Decade of Outages for One Large ML Pipeline” by Papasian and Underwood
+- _MLOps Principles_ by INNOQ
+- _Google’s Practitioners Guide to MLOps_ by Salama et al
+- [_Gently Down the Stream_](https://www.gentlydownthe.stream/) by Mitch Seymour
