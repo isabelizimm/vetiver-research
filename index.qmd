@@ -40,18 +40,18 @@ After reading, we feel confident in vetiver's scope of versioning, deploying, an
 
 Books:
 
-- _Designing Machine Learning Systems_ by Chip Huyen
+- [_Designing Machine Learning Systems_](https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/) by Chip Huyen
 
 Articles:
 
-- “Machine Learning Operations (MLOps): Overview, Definition, and Architecture” by Kreuzberger et al
-- “From Concept Drift to Model Degradation: An Overview on Performance-Aware Drift Detectors” by Bayram et al
-- “Towards Observability for Production Machine Learning Pipelines” by Shankar et al
+- [“Machine Learning Operations (MLOps): Overview, Definition, and Architecture”](https://arxiv.org/abs/2205.02302) by Kreuzberger et al
+- [“From Concept Drift to Model Degradation: An Overview on Performance-Aware Drift Detectors”](https://arxiv.org/abs/2203.11070) by Bayram et al
+- [“Towards Observability for Production Machine Learning Pipelines”](https://arxiv.org/pdf/2108.13557.pdf) by Shankar et al
 - ["The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction"](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/aad9f93b86b7addfea4c419b9100c6cdd26cacea.pdf) by Breck et al
 
 Web content:
 
-- _How ML Breaks: A Decade of Outages for One Large ML Pipeline” by Papasian and Underwood
-- _MLOps Principles_ by INNOQ
-- _Google’s Practitioners Guide to MLOps_ by Salama et al
+- [_How ML Breaks: A Decade of Outages for One Large ML Pipeline_](https://www.youtube.com/watch?v=hBMHohkRgAA) by Papasian and Underwood
+- [_MLOps Principles_](https://ml-ops.org/content/mlops-principles) by INNOQ
+- [_Google’s Practitioners Guide to MLOps_](https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf) by Salama et al
 - [_Gently Down the Stream_](https://www.gentlydownthe.stream/) by Mitch Seymour
