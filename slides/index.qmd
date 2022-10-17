@@ -1,0 +1,311 @@
+---
+title: "Vetiver Research"
+author: "MLOps squad: Julia, Hassan, Michael, Isabel"
+date: August 2022
+format: revealjs
+---
+
+# Motivation
+
+> However, MLOps is still a vague term and its consequences for researchers and professionals are ambiguous.
+
+- [D. Kreuzberger, et al](https://arxiv.org/abs/2205.02302), May 2022
+
+# Motivation
+
+![](../images/kuwtmlops.jpg)
+
+# Motivation
+
+- new space, things are constantly changing!
+- wanted to reset what we believe to be MLOps
+
+::: {.notes}
+- varying levels of knowledge and experience
+
+
+MLOps is a new space. Although we had come with varying levels of knowledge and experience, it had been a while since any of us had dedicated time to explicitly work on research and step back once again to understand the ecosystem around what MLOps is and how it is perceived. 
+:::
+
+# What did we want to learn?
+
+:::{.incremental}
+1. Is there anything in our vocabulary we should change?
+2. Where are our shortcomings? 
+3. Are these things that are out of scope, or that need more investment?
+:::
+
+# Method
+
+##
+
+::: {.r-stack}
+
+![](../images/readinglist.png){.fragment}
+
+![](../images/book.jpg){.fragment height="500"}
+
+![](../images/mltestscore.png){.fragment}
+
+![](../images/kafka.png){.fragment height="400"}
+
+![](../images/howmlbreaks.png){.fragment}
+
+![](../images/ml_def.png){.fragment}
+
+![](../images/notes.png){.fragment}
+
+:::
+
+
+::: {.notes}
+chose one month (aug) to dedicate to reading
+synthesis meeting first week of sept
+
+everyone read one longer book, and choose some other shorter articles/web content/academic papers/etc
+
+collected notes in a doc, our brain, gist, other places
+:::
+
+# Findings
+
+## What is MLOps?
+
+> Machine Learning Operations (MLOps) is a combination of processes, emerging best practices and underpinning technologies that provides a scalable, centralized and governed means to automate and scale the deployment and management of trusted ML applications in production environments. ([DataRobot](https://www.datarobot.com/lp/what-is-mlops/))
+
+## What is MLOps?
+
+> a set of practices to deploy and maintain machine learning models in production reliably and efficiently
+
+:::{.notes}
+vetiver defines the practices it helps with as: versioning, deploying, monitoring
+:::
+
+## Why is MLOps hard?
+
+_“deploying is easy if you ignore all the hard parts” - Designing Machine Learning Systems_
+
+. . .
+
+- ML engineering is experimental
+- Differing testing and production environments
+- Continuous X
+
+:::{.notes}
+90% of models don't make it to production (this is probably a good thing)-- but it makes it difficult to adhere to swe practices when things are moving quickly
+
+a lot of systems look and act very different in testing and prod (a good reason for using APIs, they are testable and look nearly identical in each environment)-- one team from google did post mortem of 10 yrs of failures and most of their failures were not ML related--best payoff was tracking versions of models, data, and model completion rates
+
+Continuous Integration (CI) extends the testing and validating code and components by adding testing and validating data and models.
+Continuous Delivery (CD) concerns with delivery of an ML training pipeline that automatically deploys another the ML model prediction service.
+Continuous Training (CT) is unique to ML systems property, which automatically retrains ML models for re-deployment.
+Continuous Monitoring (CM) concerns with monitoring production data and model performance metrics, which are bound to business metrics.
+:::
+
+
+## What are MLOps tools?
+
+:::: {.columns}
+
+::: {.column width="40%"}
+via _Designing Machine Learning Systems_
+
+  - Orchestrators
+  - Schedulers
+  - MLOps platforms
+:::
+
+::: {.column width="60%"}
+[see more open source MLOps tools](https://docs.google.com/spreadsheets/d/1P7WFuqa1NAWL509DnhLpvVZvndSv0LUG-0av_u4yZuY/edit?usp=sharing)
+
+  - Workflow tools
+  - Experiment tracking and versioning
+  - Model serving/monitoring
+  - ML platform
+:::
+
+::::
+
+
+::: {.notes}
+vetiver could be used WITH a lot of these tools, but doesn't necessarily fit into the academic views. we don't think this is vastly important, as long as we can clearly state what vetiver intends to help people with
+
+how to explain how mlops is? 
+set of practices: we chose to focus on versioning, deploying, monitoring early on. we feel even more confident that these were the right choices now
+
+the value add?
+reliably and efficiently
+:::
+
+## How to tell we're doing a good job?
+
+. . .
+
+![](../images/mltestscore.png)
+::: {.notes}
+
+One paper that seemed relevant was the "The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction" which laid out categories and a point system for users who were creating MLOps systems to score themselves on how well they had put everything together.
+
+We would like to use the "The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction" as a framework for to best understand where vetiver "wins points" to help explain to usefulness of the project in terms of best practices.
+:::
+
+
+
+##
+
+> _1. Is there anything in our vocabulary we should change?_
+
+After our research, we feel confident in our choice to focus on the practices of versioning, deploying, and monitoring.
+
+::: {.notes}
+we also feel that these words mean what we think they mean, and what the general population expects from this
+:::
+
+##
+
+> _1. Is there anything in our vocabulary we should change?_
+
+Some terms such as "batch processing" have multiple meanings. 
+
+
+:::{.notes}
+We proposed to create a glossary of how we use terms in vetiver's documentation.
+:::
+
+##
+
+> _2. Where are our shortcomings?_
+> _3. Are these things that are out of scope, or that need more investment?_
+
+DAGS
+
+![](../images/basic-dag.png)
+
+::: {.notes}
+(Directed Acyclic Graph, organizing Tasks together, organized with dependencies and relationships to say how they should run.)
+
+Blind spot in DAGs. We feel DAG support is out of scope of vetiver. 
+
+:::
+
+##
+
+> _2. Where are our shortcomings?_
+> _3. Are these things that are out of scope, or that need more investment?_
+
+- DAGS
+- monitoring
+
+::: {.notes}
+
+We hope to invest more time in monitoring, but need to balance the fact that a lot of the CI/CD in monitoring is infrastructure dependent. We know we can invest more time in things like fairness metrics (fairness book club)
+
+:::
+
+
+##
+
+> _2. Where are our shortcomings?_
+> _3. Are these things that are out of scope, or that need more investment?_
+
+- DAGS
+- monitoring
+- model registries
+
+![](../images/registry.png)
+
+::: {.notes}
+
+We feel model registries may become important, but they are not currently in our short-term plan. can DIY
+
+:::
+
+
+##
+
+> _2. Where are our shortcomings?_
+> _3. Are these things that are out of scope, or that need more investment?_
+
+- DAGS
+- monitoring
+- model registries
+- composability
+
+::: {.notes}
+
+We also feel it is important to inspect the incorporation of vetiver components with other MLOps projects, such as MLFlow or Metaflow (pipeline-y, DAG-y things).
+
+:::
+
+# Final remarks
+
+:::: {.columns}
+
+::: {.column width="40%"}
+vetiver succeeds in:
+
+- clear definition of what it delivers
+- quickly prototype REST APIs, and then scale these prototypes safely
+:::
+
+::: {.column width="60%"}
+
+:::
+
+::::
+
+# Final remarks
+
+:::: {.columns}
+
+::: {.column width="40%"}
+vetiver succeeds in:
+
+- clear definition of what it delivers
+- quickly prototype REST APIs, and then scale these prototypes safely
+:::
+
+::: {.column width="60%"}
+vetiver needs investment in:
+
+- glossary of terms
+- metricking for "reliability and efficiency"
+- monitoring
+- explicit composability
+:::
+
+::::
+
+
+## If we were to do it again...
+
+- few smaller meetings throughout the month
+- new papers have been released!
+
+:::{.notes}
+felt it was pretty successful
+
+great benefits esp wrt to understanding expectations
+
+still unclear on CI/CD portions of vetiver 
+:::
+
+# Our reading list
+
+Books:
+
+-   [*Designing Machine Learning Systems*](https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/) by Chip Huyen
+
+Articles:
+
+-   ["Machine Learning Operations (MLOps): Overview, Definition, and Architecture"](https://arxiv.org/abs/2205.02302) by Kreuzberger et al
+-   ["From Concept Drift to Model Degradation: An Overview on Performance-Aware Drift Detectors"](https://arxiv.org/abs/2203.11070) by Bayram et al
+-   ["Towards Observability for Production Machine Learning Pipelines"](https://arxiv.org/pdf/2108.13557.pdf) by Shankar et al
+-   ["The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction"](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/aad9f93b86b7addfea4c419b9100c6cdd26cacea.pdf) by Breck et al
+
+Web content:
+
+-   [*How ML Breaks: A Decade of Outages for One Large ML Pipeline*](https://www.youtube.com/watch?v=hBMHohkRgAA) by Papasian and Underwood
+-   [*MLOps Principles*](https://ml-ops.org/content/mlops-principles) by INNOQ
+-   [*Google's Practitioners Guide to MLOps*](https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf) by Salama et al
+-   [*Gently Down the Stream*](https://www.gentlydownthe.stream/) by Mitch Seymour
