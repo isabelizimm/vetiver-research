@@ -169,6 +169,8 @@ Some terms such as "batch processing" have multiple meanings.
 
 
 :::{.notes}
+online (predictions generated and returned as soon as requests arrive) vs. batch (predictions generated periodically). I am debating changing my own language to synchronous vs. asynchronous
+
 We proposed to create a glossary of how we use terms in vetiver's documentation.
 :::
 
